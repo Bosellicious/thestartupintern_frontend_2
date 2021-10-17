@@ -1,0 +1,302 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+
+/* Register Page */
+
+.box-center{
+	margin: auto;
+	text-align: center;
+	width: 40%;
+}
+
+.box-center h6{
+	margin-top: 40px;
+    text-align: left;
+	font: normal normal bold 18px/20px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+}
+
+.form-group{
+	display: flex;
+	flex-direction: column;
+}
+
+.box-center .form-group{
+	margin: 20px;
+}
+
+.form-group label{
+  	text-align: left;
+	font: normal normal 300 15px/20px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+	margin-bottom: 10px;
+}
+
+.form-group input{
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	font-size: 10px;
+	height: 59px;
+	width: 585px;
+	outline: none;
+}
+
+.btn{
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.box-center .btn-dark{
+	background: #000000 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	color: #fff;
+	text-decoration: none;
+	font: normal normal 300 20px/24px Helvetica Neue;
+	letter-spacing: 0px;
+	padding-left: 700px;
+	padding-right: 400px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+
+
+/* Navbar */
+.navbar-brand{
+	text-align: left;
+	font: normal normal bold 25px/30px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #720C23;
+	opacity: 1;
+}
+
+
+/* Todos */
+.todos{
+	margin: auto;
+	text-align: center;
+	width: 90%;
+}
+
+.todos-title{
+	text-align: left;
+	font: 20px Helvetica Neue Bold;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+	margin-top: 20px;
+	margin-bottom: 2px;
+}
+
+.todoList{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.todos-pagination{
+	text-align: end;
+	margin: 10px;
+}
+
+.todos-pagination span{
+	text-align: left;
+	font: normal normal bold 20px/25px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+}
+
+.todo-item{
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #720C23;
+	border-radius: 5px;
+	opacity: 1;
+	padding: .7em;
+	text-align: left;
+	width: 370px;
+	height: 170px;
+	margin-top:40px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	text-decoration: none;
+	color: #000000;
+}
+
+.todo-item span{
+	margin-top:-8px;
+	margin-bottom: 10px;
+	display: block;
+	text-align: right;
+}
+
+.todo-item h6{
+	text-align: left;
+	font: normal normal bold 15px/20px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+	margin: 0;
+}
+
+.todo-item p{
+	
+	text-align: left;
+	font: normal normal 15px/20px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+}
+
+.todo-item div{
+	text-align: end;
+}
+
+.todo-item button.btn.btn-dark{
+	margin: auto;
+	cursor: pointer;
+	background: #000000 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	color: #fff;
+	text-decoration: none;
+	font: normal normal 300 20px/24px Helvetica Neue;
+	letter-spacing: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+/* Create Todo */
+.page-title{
+	text-align: left;
+	font: normal normal bold 20px/22px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #000000;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	opacity: 1;
+}
+
+.page{
+	margin: auto;
+	text-align: center;
+	width: 90%;
+}
+
+.btn.btn-dark{
+	margin: auto;
+	cursor: pointer;
+	background: #000000 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	color: #fff;
+	text-decoration: none;
+	font: normal normal 300 20px/24px Helvetica Neue;
+	letter-spacing: 0px;
+	padding-left: 43px;
+	padding-right: 43px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.page .btn.btn-dark{
+	
+	width: 305px;
+	margin-top: 45px;
+}
+
+.form-col{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.page .form-col .form-group input{
+	width: 650px;
+	height: 40px;
+}
+.page .form-col .form-group label{
+	font: normal normal 300 15px/20px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+	margin-top: 10px;
+}
+.page .form-group label{
+	 text-align: left;
+	font: normal normal 300 15px/20px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+}
+textarea{
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	outline: none;
+}
+
+
+/* Todo */
+.todo p{
+	text-align: left;
+	font: normal normal 300 15px/18px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+}
+
+.todo span{
+	display: block;
+	text-align: left;
+	margin-bottom: 50px;
+
+	font: normal normal 300 15px/18px Helvetica Neue;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+}
+
+
+
+
+
+@media only screen and (max-width: 980px){
+	.todo-item{
+		height: fit-content;
+	}
+	
+	.box-center{
+		width: 90%;
+	}
+
+	.box-center input{
+		width: 100%;
+	}
+	
+	.page .form-col .form-group input{
+		width: 100%;
+	}
+
+	.page .btn.btn-dark{
+		width: 70%;
+		margin-top: 45px;
+	}
+}

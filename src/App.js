@@ -9,7 +9,7 @@ import NewTodo from "./pages/NewTodo.jsx";
 
 
 
-	 
+
 function App() {
   	return (
 		<Router>
@@ -19,7 +19,7 @@ function App() {
 				<Route path="/todos" exact component={Todos} />
 				<Route path="/login" exact component={Login} />
 				<Route path="/new-todo" exact component={NewTodo} />
-				<Route path="/todo" exact component={MyTodo} />
+				<Route path="/todo/:id" exact component={MyTodo} />
 			</Switch>
 		</Router>
 	);

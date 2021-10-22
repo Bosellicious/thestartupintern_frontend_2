@@ -1,15 +1,21 @@
-import React from 'react'
-import { Link, useLocation } from "react-router-dom"; 
+import React, { useState } from 'react'
+import { Link, useLocation, Redirect } from "react-router-dom"; 
 import "../styles/Navbar.css"; 
 
 function Navbar() {
     const { pathname } = useLocation("");
+    const [ redirect, setRedirect ] = useState(false);
+
+    const handleLogout = () =>{
+        localStorage.removeItem('token');
+        setRedirect(true);
+    }
 
     let links = (
         <React.Fragment>
-            <Link to="/"> Logout </Link>
+            <a href="#!" onClick={handleLogout}> Logout </a>
             <Link to="/new-todo">Create Todo</Link>
-            <Link to="/todos">My Todos</Link>
+            <Link to="/todos">My To</Link>
         </React.Fragment>
     );
 
@@ -25,8 +31,9 @@ function Navbar() {
 
     return (
         <div className="navbar">
+            {redirect && <Redirect to="/login"/>}
             <div className="leftSide">
-                <h3 className="navbar-brand">myTODO</h3>
+                <h3 className="navbar-brand">myTodo</h3>
             </div>
             <div className="rightSide">
                 {links}

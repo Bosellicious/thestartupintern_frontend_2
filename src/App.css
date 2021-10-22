@@ -152,12 +152,14 @@ body {
 }
 
 .todo-item p{
-	
 	text-align: left;
 	font: normal normal 15px/20px Helvetica Neue;
 	letter-spacing: 0px;
 	color: #000000;
 	opacity: 1;
+	max-height: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .todo-item div{
@@ -299,4 +301,9 @@ textarea{
 		width: 70%;
 		margin-top: 45px;
 	}
+}
+
+.text-center{
+	margin: auto;
+	text-align: center;
 }

@@ -1,41 +1,65 @@
 import React from "react";
+import { Redirect } from 'react-router-dom';
+import axios from "axios";
 
-function MyTodo() {
-  	return (
-		<div className="page todo">
-			<h6 className="page-title"> My Todo - This is a sample title</h6>
-			<span> 24/01/2021 </span>
+class MyTodo extends React.Component {
+	constructor(){
+		super();
+		this.state = {
+			title: '',
+			futureDate: '',
+			details: '',
+			redirect: false
+		}
+	}
 
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
-				when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-				It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-				It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
-			</p>
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
-				when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-				It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-				It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
-			</p>
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
-				when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-				It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-				It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
-			</p>
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
-				when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-				It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-				It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
-			</p>
-		</div>
-  	);
+	componentDidMount(){
+		
+		let config = {
+			method: 'get',
+			url: `https://eventful-moments.herokuapp.com/api/v1/moment/${this.props.match.params.id}`,
+			headers: {
+				'Authorization': localStorage.getItem('token')
+			}
+		};
+
+		axios(config)
+		.then((response)=> {
+			console.log(response.data);
+
+			if(response.data.status_code === 200){
+				const { title, details, futureDate } = response.data.data;
+				this.setState(()=>({
+					title,
+					details,
+					futureDate
+				}))
+		  	}
+		})
+		.catch((error)=> {
+			let err = error.message;
+			
+			console.log(err);
+
+			if(err.match("401") !== null){
+				this.setState(()=>({ redirect: true }))
+			}
+		});
+	}
+
+	render(){
+		return (
+			<div className="page todo">
+				{this.state.redirect && <Redirect to="/login" /> }
+			  	<h6 className="page-title"> My Todo - {this.state.title}</h6>
+			  	<span> {this.state.futureDate.substring(0, 10)} </span>
+  
+			  	<p>
+					{this.state.details}
+			  	</p>
+		  </div>
+		);
+	}
 }
 
 export default MyTodo;

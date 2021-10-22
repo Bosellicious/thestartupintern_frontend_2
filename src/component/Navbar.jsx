@@ -33,7 +33,7 @@ function Navbar() {
         <div className="navbar">
             {redirect && <Redirect to="/login"/>}
             <div className="leftSide">
-                <h3 className="navbar-brand">myToDo</h3>
+                <h3 className="navbar-brand">myTODO</h3>
             </div>
             <div className="rightSide">
                 {links}

@@ -15,7 +15,7 @@ function Navbar() {
         <React.Fragment>
             <a href="#!" onClick={handleLogout}> Logout </a>
             <Link to="/new-todo">Create Todo</Link>
-            <Link to="/todos">My To</Link>
+            <Link to="/todos">My Todos</Link>
         </React.Fragment>
     );
 
@@ -33,7 +33,7 @@ function Navbar() {
         <div className="navbar">
             {redirect && <Redirect to="/login"/>}
             <div className="leftSide">
-                <h3 className="navbar-brand">myTodo</h3>
+                <h3 className="navbar-brand">myToDo</h3>
             </div>
             <div className="rightSide">
                 {links}
